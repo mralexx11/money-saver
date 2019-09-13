@@ -7,28 +7,10 @@
       "name": "Администратор"
     },
     {
-      "email": "1@mail.ru",
-      "password": "MNJG7TBcyfJ4pHr",
-      "name": "AL",
-      "id": 2
-    },
-    {
-      "email": "leko@coin-hub.net",
-      "password": "11111111",
-      "name": "AL",
-      "id": 3
-    },
-    {
       "email": "test@mail.com",
       "password": "1234567890",
       "name": "Test",
-      "id": 4
-    },
-    {
-      "email": "12@mail.ru",
-      "password": "1111111111",
-      "name": ",mnkmkmk",
-      "id": 5
+      "id": 2
     }
   ],
   "bill": {
