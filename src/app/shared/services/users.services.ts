@@ -17,4 +17,8 @@ export class UsersServices {
         map((user: UserModel) => user[0] ? user[0] : undefined)
       );
   }
+
+  createNewUser(user: UserModel): Observable<any> {
+    return this.http.post(`${this.url}/users`, user, {responseType: 'json'});
+  }
 }
