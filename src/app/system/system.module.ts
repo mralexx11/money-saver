@@ -10,8 +10,17 @@ import { RecordsPageComponent } from './records-page/records-page.component';
 import {SystemComponent} from './system.component';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, SystemRoutingModule],
-  declarations: [SystemComponent, BillPageComponent, HistoryPageComponent, PlanningPageComponent, RecordsPageComponent]
+  imports: [
+    CommonModule,
+    SharedModule,
+    SystemRoutingModule]
+  ,
+  declarations: [
+    SystemComponent,
+    BillPageComponent,
+    HistoryPageComponent,
+    PlanningPageComponent,
+    RecordsPageComponent]
 })
 export class SystemModule {
 
