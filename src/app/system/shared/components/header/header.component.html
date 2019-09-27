@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="header-block header-block-search">
+    {{date | date: 'dd/MM/yyyy'}}
+  </div>
+  <div class="header-block header-block-nav">
+    <ul class="nav-profile">
+      <li class="profile dropdown" ohrDropdown (click)="toShow = !toShow">
+      <a class="nav-link dropdown-toggle" role="button">
+                                <span class="name">
+                                    Здравствуйте, {{user.name}}!
+                                </span>
+      </a>
+      <div class="dropdown-menu profile-dropdown-menu show" *ngIf="toShow">
+        <a class="dropdown-item" [routerLink]="'records'">
+          <i class="fas fa-cogs icon"></i>
+          Сделать запись
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="onLogout()">
+          <i class="fa fa-power-off icon"></i>
+          Выйти
+        </a>
+      </div>
+    </li>
+    </ul>
+  </div>
+</header>
