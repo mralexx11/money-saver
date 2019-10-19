@@ -1,18 +1,20 @@
-<article class="content dashboard-page">
   <div class="title-block">
     <h3 class="title float-left">
       Страница счета <span class="sparkline bar"></span>
     </h3>
     <div class="float-right">
-      <button class="btn-sm btn btn-primary-outline">
+      <button class="btn-sm btn btn-primary-outline" (click)="onRefresh()">
         <i class="fas fa-sync-alt"></i>
       </button>
     </div>
   </div>
   <section class="section">
-    <div class="row">
-      <ohr-bill-card></ohr-bill-card>
-      <ohr-currency-card></ohr-currency-card>
+    <div class="row text-center" *ngIf="!isLoaded">
+      Loading ...
+    </div>
+    <div class="row" *ngIf="isLoaded">
+      <ohr-bill-card [bill]="bill" [currency]="currency"></ohr-bill-card>
+      <ohr-currency-card [currency]="currency"></ohr-currency-card>
 
     </div>
   </section>

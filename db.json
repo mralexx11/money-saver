@@ -15,7 +15,7 @@
   ],
   "bill": {
     "value": 100000,
-    "currency": "UAH"
+    "currency": "USD"
   },
   "categories": [
     {

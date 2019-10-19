@@ -11,12 +11,13 @@ import {BillModel} from '../shared/models/bill.model';
 export class BillPageComponent implements OnInit, OnDestroy {
 
   constructor(private billService: BillService) { }
+
   private sub1: Subscription;
   private sub2: Subscription;
-
+  private currency: any;
   private bill: BillModel;
-  private cur: any;
-  isLoaded = false;
+  private isLoaded = false;
+
   ngOnInit() {
     const observerObj = combineLatest ([
       this.billService.getBill(),
@@ -24,12 +25,24 @@ export class BillPageComponent implements OnInit, OnDestroy {
       ]);
     this.sub1 = observerObj.subscribe((data: [BillModel, any]) => {
       this.bill = data[0];
-      this.cur = data[1];
+      this.currency = data[1];
       this.isLoaded = true;
-      console.log(data);
     });
   }
+
+  onRefresh() {
+    this.isLoaded = false;
+    this.sub2 = this.billService.getCurrency()
+      .subscribe((currency: any) => {
+        this.currency = currency;
+        this.isLoaded = true;
+      });
+  }
+
   ngOnDestroy() {
     this.sub1.unsubscribe();
+    if (this.sub2) {
+      this.sub2.unsubscribe();
+    }
   }
 }
